@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulary — A daily formula, dispensed for one</title>
+<title>Plainscript · Your prescription, in words you can read, search, and hear</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@
   .hero{
     flex:1;
     display:flex;align-items:center;
-    padding:clamp(28px,4vw,56px) 0;
+    padding:clamp(14px,2vw,28px) 0;
   }
   .copy{max-width:min(620px,60%)}
 
@@ -100,14 +100,14 @@
     display:inline-flex;align-items:center;gap:10px;
     font-family:"IBM Plex Mono",monospace;
     font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--ink-soft);margin-bottom:clamp(22px,2.4vw,30px);
+    color:var(--ink-soft);margin-bottom:clamp(12px,1.4vw,18px);
   }
   .eyebrow .tick{width:22px;height:3px;background:var(--gold);display:inline-block}
 
   h1{
     font-family:"Newsreader",serif;
     font-weight:400;
-    font-size:clamp(34px,6.2vw,82px);
+    font-size:clamp(32px,5vw,64px);
     line-height:.98;
     letter-spacing:-.015em;
     text-wrap:balance;
@@ -117,7 +117,7 @@
 
   .rule{
     width:64px;height:1px;background:var(--maroon);
-    margin:clamp(24px,3vw,34px) 0 clamp(18px,2vw,22px);
+    margin:clamp(16px,2vw,22px) 0 clamp(14px,1.4vw,18px);
   }
 
   .lede{
@@ -130,7 +130,7 @@
   /* directive bar — borrows the label's ALL-CAPS directions language */
   .directive{
     display:inline-flex;align-items:stretch;
-    margin-top:clamp(26px,3vw,34px);
+    margin-top:clamp(18px,2vw,24px);
     font-family:"IBM Plex Mono",monospace;
     font-size:12px;letter-spacing:.1em;text-transform:uppercase;
     border:1px solid var(--ink);
@@ -142,7 +142,7 @@
   }
   .directive .txt{padding:9px 14px;color:var(--ink);align-self:center}
 
-  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(30px,3.4vw,40px)}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(20px,2.4vw,28px)}
   .btn{
     font-family:"IBM Plex Mono",monospace;
     font-size:13px;letter-spacing:.08em;
@@ -287,6 +287,100 @@
   @keyframes btnUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,121,30,.55)}70%{box-shadow:0 0 0 9px rgba(217,121,30,0)}100%{box-shadow:0 0 0 0 rgba(217,121,30,0)}}
 
+  /* ---------- Story bands (below the hero) ---------- */
+  .band{ background:var(--studio); border-top:1px solid var(--maroon); }
+  .band-bone{ background:var(--bone); }
+  .band-ink{ background:var(--ink); color:var(--bone); border-top-color:var(--gold); }
+  .wrap{
+    max-width:1180px; margin:0 auto;
+    padding:clamp(56px,7vw,108px) clamp(20px,4.5vw,70px);
+  }
+  .band h2{
+    font-family:"Newsreader",serif; font-weight:400;
+    font-size:clamp(28px,4.4vw,54px); line-height:1.02; letter-spacing:-.015em;
+    text-wrap:balance; margin-top:clamp(18px,2vw,24px);
+  }
+  .band h2 em{font-style:italic;color:var(--maroon)}
+  .band-ink h2 em{color:var(--gold)}
+  .band .lead{
+    font-size:clamp(15px,1.18vw,18px); line-height:1.6; color:var(--ink-soft);
+    max-width:60ch; margin-top:clamp(20px,2.2vw,26px);
+  }
+  .band-ink .lead{color:rgba(251,250,248,.78)}
+  .band .note{
+    font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.04em;
+    line-height:1.6; color:var(--ink-soft); margin-top:clamp(26px,3vw,38px); max-width:62ch;
+  }
+  .band .note-ink{color:rgba(251,250,248,.6)}
+
+  /* problem fragments + how-it-works steps share a 3-up grid */
+  .frags,.steps{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:clamp(22px,3vw,40px); margin-top:clamp(36px,4vw,56px);
+  }
+  .frag{ border-top:1px solid var(--gold); padding-top:18px; }
+  .frag .idx{
+    font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--maroon);
+  }
+  .frag h3{
+    font-family:"Newsreader",serif; font-weight:500; font-size:clamp(18px,1.5vw,22px);
+    line-height:1.15; margin:12px 0 10px;
+  }
+  .frag p{font-size:14.5px; line-height:1.6; color:var(--ink-soft)}
+
+  .step{ position:relative; }
+  .step .num{
+    font-family:"Newsreader",serif; font-style:italic; font-size:clamp(42px,5vw,64px);
+    line-height:1; color:var(--maroon); display:block;
+  }
+  .step h3{
+    font-family:"IBM Plex Sans",sans-serif; font-weight:500; font-size:17px;
+    margin:14px 0 9px; letter-spacing:.01em;
+  }
+  .step p{font-size:14.5px; line-height:1.6; color:var(--ink-soft)}
+
+  /* the questions list */
+  .qs{
+    list-style:none; margin-top:clamp(34px,4vw,52px);
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:0 clamp(30px,4vw,64px);
+  }
+  .qs li{
+    font-family:"Newsreader",serif; font-style:italic; font-size:clamp(19px,1.9vw,26px);
+    line-height:1.25; color:var(--ink); padding:clamp(16px,1.8vw,22px) 0;
+    border-bottom:1px solid rgba(126,43,38,.18); display:flex; gap:14px; align-items:baseline;
+  }
+  .qs li::before{
+    content:"℞"; font-style:normal; font-size:.7em; color:var(--maroon); flex:none;
+    transform:translateY(-1px);
+  }
+
+  /* one-source audiences row */
+  .audiences{
+    display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,64px);
+    margin-top:clamp(36px,4vw,54px); padding-top:22px;
+    border-top:1px solid var(--gold);
+  }
+  .aud{display:flex; flex-direction:column; gap:4px}
+  .aud .ak{
+    font-family:"Newsreader",serif; font-size:clamp(20px,2vw,28px); color:var(--bone);
+  }
+  .aud .av{
+    font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold);
+  }
+
+  /* closing band */
+  .closer .big{font-size:clamp(32px,5.4vw,68px); line-height:1}
+  .closer .cta{margin-top:clamp(30px,3.4vw,42px)}
+  .closer .endrule{height:1px; background:var(--maroon); margin:clamp(46px,6vw,72px) 0 16px}
+  .closer .endline{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 24px;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .brk2{display:inline}
+
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
     .copy{max-width:100%}
@@ -305,6 +399,7 @@
     .record .scan{display:none}
     .directive{flex-wrap:wrap}
     h1 .brk{display:none}
+    .brk2{display:none}
   }
   @media (prefers-reduced-motion:reduce){
     .rise{animation:none;opacity:1;transform:none}
@@ -321,47 +416,48 @@
   <main class="stage">
 
     <header class="topbar rise d1">
-      <div class="wordmark">Formulary<b>.</b></div>
+      <div class="wordmark">Plainscript<b>.</b></div>
       <nav class="nav" aria-label="Primary">
-        <a href="#" class="lbl">The Formula</a>
-        <a href="#" class="lbl">Evidence</a>
-        <a href="#" class="lbl">Account</a>
+        <a href="#how" class="lbl">How it works</a>
+        <a href="#ask" class="lbl">What you can ask</a>
+        <a href="#source" class="lbl">For pharmacies</a>
         <a href="#" class="rx" aria-label="Prescription">℞</a>
       </nav>
     </header>
 
     <section class="hero">
       <div class="copy">
-        <span class="eyebrow rise d2"><span class="tick"></span>RX–04 · ONCE DAILY</span>
+        <span class="eyebrow rise d2"><span class="tick"></span>Point your phone at the label</span>
 
-        <h1 class="rise d3">A daily formula,<br class="brk">dispensed for a<br class="brk"><em>sample size of one.</em></h1>
+        <h1 class="rise d3">Your prescription,<br class="brk">in plain words you can<br class="brk"><em>talk to.</em></h1>
 
         <div class="rule rise d4"></div>
 
         <p class="lede rise d4">
-          <b>Formulary</b> is a once-daily capsule built from your bloodwork and signed off
-          by a licensed pharmacist. No aisle of guesswork — one bottle, refilled to your
-          door, re-balanced every time your labs change.
+          <b>Plainscript</b> turns the label on your bottle into medication information you can
+          actually use. Scan it, and the same approved guidance your pharmacist works from
+          becomes large type, plain language, and searchable. Ask "can I take this with food?"
+          and hear a straight answer, in your language.
         </p>
 
         <div class="directive rise d5">
-          <span class="tag">Directions</span>
-          <span class="txt">Take one capsule each morning with water</span>
+          <span class="tag">Ask</span>
+          <span class="txt">Can I take this with food?</span>
         </div>
 
         <div class="cta rise d5">
-          <a href="#" class="btn btn-primary">Start your formula <span class="arr">→</span></a>
-          <a href="#" class="btn btn-ghost">See what's inside</a>
+          <a href="#how" class="btn btn-primary">Scan your bottle <span class="arr">→</span></a>
+          <a href="#ask" class="btn btn-ghost">See a sample</a>
         </div>
       </div>
     </section>
 
     <footer class="record rise d6">
-      <div class="field"><span class="k">No.</span><span class="v">F‑04 · 2271</span></div>
-      <div class="field"><span class="k">Qty</span><span class="v">60 capsules</span></div>
-      <div class="field"><span class="k">Refills</span><span class="v"><b>Unlimited</b></span></div>
-      <div class="field"><span class="k">Review</span><span class="v">By pharmacist</span></div>
-      <div class="field scan"><span class="k">Scan for more info</span><span class="v">▣ formulary.co/rx</span></div>
+      <div class="field"><span class="k">Source</span><span class="v">Approved monograph + PMI</span></div>
+      <div class="field"><span class="k">Text size</span><span class="v">Up to 200%</span></div>
+      <div class="field"><span class="k">Read aloud</span><span class="v"><b>Yes</b></span></div>
+      <div class="field"><span class="k">Languages</span><span class="v">Plain + translated</span></div>
+      <div class="field scan"><span class="k">Scan to try</span><span class="v">▣ plainscript.ca/rx</span></div>
     </footer>
 
     <div class="phone-anchor" aria-hidden="true">
@@ -385,6 +481,116 @@
     </div>
 
   </main>
+
+  <!-- ===================== THE PROBLEM ===================== -->
+  <section class="band" id="problem">
+    <div class="wrap">
+      <span class="eyebrow"><span class="tick"></span>The problem</span>
+      <h2>The information exists.<br class="brk2"> You just can't get to it.</h2>
+      <p class="lead">
+        What you need to take a medicine safely is scattered across three documents, and at
+        every handoff something breaks down. The richest guidance stays locked away, and what
+        reaches you is hard to read, easy to lose, and impossible to adapt.
+      </p>
+      <div class="frags">
+        <article class="frag">
+          <span class="idx">01 / The label</span>
+          <h3>Built for the printer, not your eyes</h3>
+          <p>Small type, all capitals, packed tight. No rule governs how a label looks, so legibility is left to chance, and dosage gets misread.</p>
+        </article>
+        <article class="frag">
+          <span class="idx">02 / The leaflet</span>
+          <h3>Plain language you can't search</h3>
+          <p>The Patient Medication Information sheet is plain enough, but it is a piece of paper. Easy to lose, impossible to search, and the same size for everyone.</p>
+        </article>
+        <article class="frag">
+          <span class="idx">03 / The monograph</span>
+          <h3>Safety facts written for clinicians</h3>
+          <p>Interactions, food timing, what to do about a side effect. The most useful answers live in a dense document meant for professionals.</p>
+        </article>
+      </div>
+      <p class="note">Adverse drug events remain one of the most common, and most preventable, harms in health care.</p>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="band band-bone" id="how">
+    <div class="wrap">
+      <span class="eyebrow"><span class="tick"></span>How it works</span>
+      <h2>Scan once. Read it your way.</h2>
+      <div class="steps">
+        <article class="step">
+          <span class="num">1</span>
+          <h3>Scan the bottle</h3>
+          <p>Point your camera at the label or its code. Plainscript identifies the exact drug, strength, and form on the bottle in your hand.</p>
+        </article>
+        <article class="step">
+          <span class="num">2</span>
+          <h3>Read it your way</h3>
+          <p>Raise the text to 200%, lift the contrast, switch to plain language, or translate the whole thing in a single tap.</p>
+        </article>
+        <article class="step">
+          <span class="num">3</span>
+          <h3>Ask, or just listen</h3>
+          <p>Type or speak a real question and get a straight answer. Or have the full instructions read aloud, hands free.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT YOU CAN ASK ===================== -->
+  <section class="band" id="ask">
+    <div class="wrap">
+      <span class="eyebrow"><span class="tick"></span>Plain answers</span>
+      <h2>The questions a label<br class="brk2"> never answers.</h2>
+      <ul class="qs">
+        <li>Can I take this with food?</li>
+        <li>What do I do if I miss a dose?</li>
+        <li>Does this interact with my other medications?</li>
+        <li>What are the serious side effects, and which need a doctor?</li>
+        <li>Is it safe to have a drink while I'm on this?</li>
+        <li>How should I store it, and when does it expire?</li>
+      </ul>
+      <p class="note">Every answer is drawn from the approved product information for your exact medicine. Not the open web.</p>
+    </div>
+  </section>
+
+  <!-- ===================== ONE SOURCE OF TRUTH ===================== -->
+  <section class="band band-ink" id="source">
+    <div class="wrap">
+      <span class="eyebrow"><span class="tick"></span>One source of truth</span>
+      <h2>Straight from the<br class="brk2"> approved monograph.</h2>
+      <p class="lead">
+        Health Canada already requires structured, plain-language patient information for every
+        drug, and is moving to a machine-readable product monograph. Plainscript reads that
+        authoritative, regulator-approved content and delivers it to the patient. The same source
+        your pharmacist dispenses from, now legible. No new regulation. No bigger labels.
+      </p>
+      <div class="audiences">
+        <div class="aud"><span class="ak">Sponsors</span><span class="av">author it</span></div>
+        <div class="aud"><span class="ak">Pharmacists</span><span class="av">dispense it</span></div>
+        <div class="aud"><span class="ak">Patients</span><span class="av">act on it</span></div>
+      </div>
+      <p class="note note-ink">Built for older adults, people with low vision or low literacy, readers in other languages, and the caregivers helping them.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CLOSING CTA ===================== -->
+  <section class="band band-bone closer">
+    <div class="wrap">
+      <h2 class="big">Make your next prescription<br class="brk2"> legible.</h2>
+      <div class="cta">
+        <a href="#how" class="btn btn-primary">Scan your bottle <span class="arr">→</span></a>
+        <a href="#source" class="btn btn-ghost">For pharmacies</a>
+      </div>
+      <div class="endrule"></div>
+      <div class="endline">
+        <span class="mono">Plainscript</span>
+        <span class="mono">℞ Patient-centred medication information</span>
+        <span class="mono">plainscript.ca</span>
+      </div>
+    </div>
+  </section>
 
   <script>
     // Lock the phone's viewfinder onto the QR code inside the cover-scaled hero.

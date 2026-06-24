@@ -1,25 +1,26 @@
-# rxVoice2
+# rxVoice2 — Plainscript
 
-Landing page for **Formulary** — a once-daily compounded formula, dispensed for a sample size of one.
+Landing page for **Plainscript** — a patient-centred delivery layer for prescription medication information.
 
-A single self-contained `index.html` (no build step, no dependencies). The hero pairs a large foreground phone "scanning" a smaller, further-back prescription bottle to sell a sense of depth and perspective. The phone's viewfinder is locked onto the QR code printed on the bottle label via a small positioning script, so the two stay aligned as the window resizes.
+Today the information a patient needs to take a medicine safely is fragmented across three documents (a clinician-facing product monograph, a plain-language Patient Medication Information sheet, and the physical bottle label), and at each handoff legibility, comprehensibility, or actionability breaks down. Plainscript turns the label on your bottle into medication information you can actually use: scan it, and the same regulator-approved guidance pharmacists work from becomes large type, plain language, searchable, read-aloud, and translatable.
+
+A single self-contained `index.html` (no build step, no dependencies).
 
 ## Live page
 
 https://ianpilon.github.io/rxVoice2/
 
-## Highlights
+## The page
 
-- **Forced-perspective composition** — the phone renders at 2x scale in the foreground while the bottle photo is drawn at half its cover size, so it reads as further away.
-- **QR lock** — the bottle photo and the phone share one scale/position source in JS, keeping the phone's scan brackets centered on the bottle's QR code at any width.
-- **Balanced layout** — the phone auto-centers in the open space to the right of the copy, with equal whitespace on either side.
-- **Clickable scan CTA** — the "Scan QR code" button sits above the fold and re-arms the scan sweep on tap.
-- **Responsive** — below 900px the phone is hidden and the bottle reflows for small screens.
+- **Hero** — a forced-perspective composition: a large foreground phone "scanning" the QR code on a smaller, further-back prescription bottle. The phone's viewfinder is locked onto the bottle's QR via a small positioning script, so the two stay aligned as the window resizes.
+- **The problem** — the three documents (label, leaflet, monograph) and how each fails the patient.
+- **How it works** — scan the bottle, read it your way (text size, contrast, plain language, translate), then ask a question or have it read aloud.
+- **What you can ask** — the real questions a label never answers ("can I take this with food?", "what do I do if I miss a dose?").
+- **One source of truth** — drawn from Health Canada's structured PMI and the machine-readable product monograph; the same authoritative content pharmacists dispense from. No new regulation, no bigger labels.
 
-## Type & color
+## Design
 
-- Type: Newsreader (display serif), IBM Plex Sans (body), IBM Plex Mono (labels/metadata).
-- Palette: warm studio gray backdrop, near-black ink, amber bottle plastic, mustard label bars, and a maroon hairline accent.
+Designed with the **DESIGN.md** skill (see `CLAUDE.md`). Apothecary/pharmacy register: Newsreader (display serif), IBM Plex Sans (body), IBM Plex Mono (labels), on a warm studio-gray ground with amber, mustard, and maroon accents.
 
 ## Running locally
 
